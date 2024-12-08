@@ -7,7 +7,6 @@ const paginateBlogs = (blogs, page, limit) => {
   return blogs.slice(start, end);
 };
 
-// Unified API: Get blogs with optional search, filter, and pagination
 const getBlogs = (req, res) => {
   const { query, filter, page = 1, limit = 10 } = req.query;
 
@@ -22,11 +21,14 @@ const getBlogs = (req, res) => {
     );
   }
 
-  // 2. Filter blogs based on category
+  // 2. Filter blogs based on category (supporting multiple filters)
   if (filter) {
-    const lowerCaseFilter = filter.toLowerCase();
-    filteredBlogs = filteredBlogs.filter(
-      (item) => item.category.toLowerCase() === lowerCaseFilter
+    // Convert `filter` to an array if it's not already
+    const filterArray = Array.isArray(filter) ? filter : [filter];
+    const lowerCaseFilters = filterArray.map((f) => f.toLowerCase());
+
+    filteredBlogs = filteredBlogs.filter((item) =>
+      lowerCaseFilters.includes(item.category.toLowerCase())
     );
   }
 
