@@ -1,4 +1,4 @@
-Backend code for a blog website made using Nodejs.
+Backend code for a blog website made using Nodejs and ExpressJS.
   
   Backend deployed using render.com at : [Click Here](https://blog-backend-axna.onrender.com)
 
