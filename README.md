@@ -4,26 +4,26 @@ Backend code for a blog website made using Nodejs and ExpressJS.
 
 ## How to run locally
 
-Step 1:
+Step 1: Clone the repository
 ```
 git clone https://github.com/ankit-suman-07/Blog-Backend.git
 ```
-Step 2:
+Step 2: Move to the directory containing app.js
 ```
 cd src
 ```
 
-Step 3:
+Step 3: install all the dependencies
 ```
 npm i
 ```
 
-Step 4:
+Step 4: Start the server
 ```
 node app.js
 ```
 
-Step 5:
+Step 5: Go to this link to access the server
 ```
 http://localhost:5500
 ```
